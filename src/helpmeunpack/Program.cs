@@ -3,7 +3,7 @@ using Newtonsoft.Json.Linq;
 
 var HttpClient = new HttpClient();
 
-var problemUri = "https://hackattic.com/challenges/help_me_unpack/problem?access_token=8652c8292f0cc7c0";
+var problemUri = "https://hackattic.com/challenges/help_me_unpack/problem?access_token=";
 
 var httpResponseMessageProblem = await HttpClient.GetAsync(problemUri);
 
@@ -56,7 +56,7 @@ var ouput = new JObject()
                 { "big_endian_double", bigEndianDouble64 }
             };
 
-var solveUri = "https://hackattic.com/challenges/help_me_unpack/solve?access_token=8652c8292f0cc7c0";
+var solveUri = "https://hackattic.com/challenges/help_me_unpack/solve?access_token=";
 
 var httpResponseMessageSolve = await HttpClient
     .PostAsync(solveUri, new StringContent(ouput.ToString(), Encoding.UTF8, "application/json"));

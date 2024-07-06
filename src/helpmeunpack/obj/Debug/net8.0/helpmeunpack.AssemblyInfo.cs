@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("helpmeunpack")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7c9247ef9e67eaa5060adb4791a19edebe292e3f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8b96bf952b35669ec771d2ac28d7fc4d0d90d647")]
 [assembly: System.Reflection.AssemblyProductAttribute("helpmeunpack")]
 [assembly: System.Reflection.AssemblyTitleAttribute("helpmeunpack")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

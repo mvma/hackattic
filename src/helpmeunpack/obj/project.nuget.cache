@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "pSn6VYNBMV0FUphS3WGfJZSOtGyW7e6xnudERRwu/UC2kKlCmeD7MZFhTrsx6d8hFADshOhjD7/O+gDxg7z4dg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\marcus.arruda\\Desktop\\environment\\labs\\study\\hackattic\\src\\helpmeunpack\\helpmeunpack.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\marcus.arruda\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

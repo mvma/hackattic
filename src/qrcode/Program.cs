@@ -1,9 +1,7 @@
 ﻿using System.Drawing;
 using System.Text;
 using Newtonsoft.Json.Linq;
-using ZXing;
 using ZXing.Common;
-using ZXing.QrCode;
 
 var HttpClient = new HttpClient();
 

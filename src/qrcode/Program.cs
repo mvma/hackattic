@@ -33,7 +33,6 @@ if (!httpResponseMessageImageUrl.IsSuccessStatusCode)
 }
 
 var bitmap = new Bitmap(Image.FromStream(await httpResponseMessageImageUrl.Content.ReadAsStreamAsync()));
-bitmap.Save(@"C:\Users\marcus.arruda\Downloads\qrcode.bmp");
 var reader = new ZXing.Windows.Compatibility.BarcodeReader()
 {
     AutoRotate = true,

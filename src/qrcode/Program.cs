@@ -1,61 +1,35 @@
-﻿using System.Drawing;
+﻿using Newtonsoft.Json.Linq;
+using System.Drawing;
 using System.Text;
-using Newtonsoft.Json.Linq;
 using ZXing.Common;
 
-var HttpClient = new HttpClient();
-
+var httpClient = new HttpClient();
 var problemUri = "https://hackattic.com/challenges/reading_qr/problem?access_token=";
+var response = await httpClient.GetAsync(problemUri);
 
-var httpResponseMessageProblem = await HttpClient.GetAsync(problemUri);
+if (!response.IsSuccessStatusCode) return;
 
-if (!httpResponseMessageProblem.IsSuccessStatusCode)
-{
-    Console.WriteLine($"Failed to fetch data. Status code: {httpResponseMessageProblem.StatusCode}");
-    return;
-}
+var content = await response.Content.ReadAsStringAsync();
+var input = JObject.Parse(content);
 
-var problemContent = await httpResponseMessageProblem.Content.ReadAsStringAsync();
-var input = JObject.Parse(problemContent);
+if (!input.TryGetValue("image_url", out var imageUrl)) return;
 
-if (!input.TryGetValue("image_url", out var image_url))
-{
-    Console.WriteLine("Key 'image_url' not found in the response.");
-    return;
-}
+var imageResponse = await httpClient.GetAsync(imageUrl.ToString());
 
-var httpResponseMessageImageUrl = await HttpClient.GetAsync(image_url.ToString());
+if (!imageResponse.IsSuccessStatusCode) return;
 
-if (!httpResponseMessageImageUrl.IsSuccessStatusCode)
-{
-    Console.WriteLine($"Failed to fetch data. Status code: {httpResponseMessageImageUrl.StatusCode}");
-    return;
-}
-
-var bitmap = new Bitmap(Image.FromStream(await httpResponseMessageImageUrl.Content.ReadAsStreamAsync()));
-var reader = new ZXing.Windows.Compatibility.BarcodeReader()
+var bitmap = new Bitmap(Image.FromStream(await imageResponse.Content.ReadAsStreamAsync()));
+var reader = new ZXing.Windows.Compatibility.BarcodeReader
 {
     AutoRotate = true,
-    Options = new DecodingOptions
-    {
-        TryHarder = true
-    }
+    Options = new DecodingOptions { TryHarder = true }
 };
 
 var result = reader.Decode(bitmap);
 
-Console.WriteLine(result.Text);
-
-var ouput = new JObject()
-            {
-                { "code", result.Text }
-            };
+var output = new JObject { { "code", result.Text } };
 
 var solveUri = "https://hackattic.com/challenges/reading_qr/solve?access_token=";
+var solveResponse = await httpClient.PostAsync(solveUri, new StringContent(output.ToString(), Encoding.UTF8, "application/json"));
 
-var httpResponseMessageSolve = await HttpClient
-    .PostAsync(solveUri, new StringContent(ouput.ToString(), Encoding.UTF8, "application/json"));
-
-var solveContent = await httpResponseMessageSolve.Content.ReadAsStringAsync();
-
-Console.WriteLine(solveContent);
+Console.WriteLine(await solveResponse.Content.ReadAsStringAsync());

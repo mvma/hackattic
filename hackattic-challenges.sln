@@ -7,6 +7,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{09240018-863
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "helpmeunpack", "src\helpmeunpack\helpmeunpack.csproj", "{555953BA-BF2C-4F65-BA77-43CA046CE189}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "qrcode", "src\qrcode\qrcode.csproj", "{BDD39A17-4942-4596-83F8-DBF04F3B7294}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "miniminer", "src\miniminer\miniminer.csproj", "{0CB84F57-0B12-4463-BD31-7B0FDA3DC4D8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -20,8 +24,18 @@ Global
 		{555953BA-BF2C-4F65-BA77-43CA046CE189}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{555953BA-BF2C-4F65-BA77-43CA046CE189}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{555953BA-BF2C-4F65-BA77-43CA046CE189}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BDD39A17-4942-4596-83F8-DBF04F3B7294}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BDD39A17-4942-4596-83F8-DBF04F3B7294}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BDD39A17-4942-4596-83F8-DBF04F3B7294}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BDD39A17-4942-4596-83F8-DBF04F3B7294}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0CB84F57-0B12-4463-BD31-7B0FDA3DC4D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0CB84F57-0B12-4463-BD31-7B0FDA3DC4D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0CB84F57-0B12-4463-BD31-7B0FDA3DC4D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0CB84F57-0B12-4463-BD31-7B0FDA3DC4D8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{555953BA-BF2C-4F65-BA77-43CA046CE189} = {09240018-863D-4F4F-AFF8-BB2D3572937C}
+		{BDD39A17-4942-4596-83F8-DBF04F3B7294} = {09240018-863D-4F4F-AFF8-BB2D3572937C}
+		{0CB84F57-0B12-4463-BD31-7B0FDA3DC4D8} = {09240018-863D-4F4F-AFF8-BB2D3572937C}
 	EndGlobalSection
 EndGlobal
